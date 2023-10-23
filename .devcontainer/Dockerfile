@@ -9,26 +9,26 @@ ARG USER_GID=$USER_UID
 # Create the user
 # https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
 RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    && usermod -a -G video user \ 
-    && apt-get update \
-    && apt-get install -y sudo \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
+  && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+  && usermod -a -G video user \ 
+  && apt-get update \
+  && apt-get install -y sudo \
+  && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+  && chmod 0440 /etc/sudoers.d/$USERNAME
 
 # Add the deadsnakes PPA to get the latest Python version
 RUN sudo apt-get install -y software-properties-common \
-    && sudo add-apt-repository ppa:deadsnakes/ppa
+  && sudo add-apt-repository ppa:deadsnakes/ppa
 
 # Install dependencies
 RUN sudo apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
   build-essential \
   curl \
-  ffmpeg \
   git \
   poppler-utils \
   python3 \
+  python3.11 \
   python3-dev \
   python3-distutils \
   python3-venv \
@@ -47,14 +47,3 @@ RUN sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 # User the new user
 USER $USERNAME
-
-# Install python dev dependencies
-RUN pip install \
-  autopep8 \
-  jedi \
-  mypy \
-  pylance \
-  pytest \
-  toml \
-  yapf \
-  jupyterlab

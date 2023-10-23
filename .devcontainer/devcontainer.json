@@ -1,23 +1,23 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.238.1/containers/python-3
 {
-    "name": "Python 3",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "USERNAME": "user"
-        }
-    },
-    // Configure tool-specific properties.
-    "customizations": {
-        // Configure properties specific to VS Code.
-        "vscode": {
-            // Set *default* container specific settings.json values on container create.
-            "settings": {
-                "mypy.dmypyExecutable": "dmypy"
-            },
-            // Add the IDs of extensions you want installed when the container is created.
-            "extensions": [
+	"name": "Python 3",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"USERNAME": "user"
+		}
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"mypy.dmypyExecutable": "dmypy"
+			},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
 				"christian-kohler.path-intellisense",
 				"davidanson.vscode-markdownlint",
 				"donjayamanne.githistory",
@@ -43,11 +43,11 @@
 				"streetsidesoftware.code-spell-checker",
 				"tushortz.python-extended-snippets",
 				"yzhang.markdown-all-in-one",
-                "2gua.rainbow-brackets"
+				"2gua.rainbow-brackets"
 			]
-        }
-    },
-    "containerUser": "user",
-    // Install any dependencies
-    "postCreateCommand": "pip install ."
+		}
+	},
+	"containerUser": "user",
+	// Install any dependencies
+	"postCreateCommand": "poetry env use 3.11 && poetry install --with dev,jupyter"
 }
