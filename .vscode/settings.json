@@ -1,0 +1,17 @@
+{
+    "rewrap.autoWrap.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    },
+    "rewrap.reformat": false,
+    "editor.formatOnSave": true,
+    "python.testing.pytestEnabled": true,
+    "rewrap.wrappingColumn": 100,
+    "pylint.importStrategy": "fromEnvironment",
+    "notebook.formatOnCellExecution": true,
+    "notebook.formatOnSave.enabled": true,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+  }
