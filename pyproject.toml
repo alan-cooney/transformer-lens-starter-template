@@ -1,10 +1,11 @@
 [tool.poetry]
-name = "project-name"
+name = "project_name"
 version = "0.0.0"  
 description = "Project Description"
 authors = ["Alan Cooney <41682961+alan-cooney@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
+include = ["src"]
 
 [tool.poetry.dependencies]
 python = ">=3.9, <4"

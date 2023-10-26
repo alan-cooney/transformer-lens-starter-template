@@ -11,6 +11,10 @@ A simple starter template to get going with Transformer Lens.
    ](https://github.com/new?template_name=transformer-lens-starter-template&template_owner=alan-cooney)
 
 2. Follow the steps below, depending on what system you're using.
+3. Optionally edit `pyproject.toml` to change your project name, and then rename `src` (both in
+   pyproject's `include` and the actual directory in your repo) to your new project package name.
+   This has the effect of allowing you to import things as `import my_project_name.main` (i.e. it's
+   like adding your `src` directory to `PATH`).
 
 ### System Setup
 
