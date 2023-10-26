@@ -45,7 +45,7 @@ However, this means you'll need to install some dependencies:
 
    ```bash
    poetry config virtualenvs.in-project true # [Optional] Default to creating .venv in project dir
-   poetry install # Install
+   poetry install --with dev,jupyter # Install
    poetry env use python3.11 # [Optional] use a specific python version
    ```
 
