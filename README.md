@@ -1,6 +1,7 @@
 # Transformer Lens Starter Template
 
-A simple starter template to get going with Transformer Lens.
+A simple starter template to get going with [Transformer
+Lens](https://github.com/neelnanda-io/TransformerLens).
 
 ## Getting Started
 
