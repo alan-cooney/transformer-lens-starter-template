@@ -48,6 +48,10 @@ However, this means you'll need to install some dependencies:
    pip install .
    ```
 
+7. In VSCode set your default interpretor to the virtual environment (`CMD+SHIFT+P` then `>Python:
+   Select Interpretor`. Choose the one in the virtual environment ('.venv: Poetry'). Then reload the
+   window (`CMD+SHIFT+P` then `>Developer: Reload Window`).
+
 #### Windows/Linux (local only)
 
 1. Install the following:
@@ -59,6 +63,9 @@ However, this means you'll need to install some dependencies:
 
 2. Clone your newly created repo onto your local system.
 3. Open the folder in VSCode and click "yes" to opening the devcontainer with Docker.
+4. In VSCode set your default interpretor to the virtual environment (`CMD+SHIFT+P` then `>Python:
+   Select Interpretor`. Choose the one in the virtual environment ('.venv: Poetry'). Then reload the
+   window (`CMD+SHIFT+P` then `>Developer: Reload Window`).
 
 #### Remote SSH (e.g. VastAI)
 
@@ -73,3 +80,11 @@ However, this means you'll need to install some dependencies:
 4. Clone the repo you've already created (from the template) on this remote box.
 5. Open the cloned repo folder with VSCode
 6. Click "yes" to opening the devcontainer with Docker.
+7. In VSCode set your default interpretor to the virtual environment (`CMD+SHIFT+P` then `>Python:
+   Select Interpretor`. Choose the one in the virtual environment ('.venv: Poetry'). Then reload the
+   window (`CMD+SHIFT+P` then `>Developer: Reload Window`).
+
+## Troubleshooting
+
+If you have any issues, just open an issue with your question. I'll try to respond as quickly as
+possible, and also add the solution to the README.
