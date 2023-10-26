@@ -10,20 +10,7 @@ A simple starter template to get going with Transformer Lens.
    Badge](https://img.shields.io/badge/Use%20the%20template-rgb(31%2C%20136%2C%2061)?style=for-the-badge&logo=github)
    ](https://github.com/new?template_name=transformer-lens-starter-template&template_owner=alan-cooney)
 
-2. Clone your repo on whichever system you are using (detailed setup instructions below if you don't
-   have e.g. Python installed already).
-
-3. Install the dependencies with [Poetry](https://github.com/python-poetry/poetry), or pip.
-
-   ```bash
-   poetry config virtualenvs.in-project true # [Optional] Default to creating .venv in project dir
-   poetry install # Install
-   poetry env use python3.11 # [Optional] use a specific python version
-   ```
-
-   ```bash
-   pip install .
-   ```
+2. Follow the steps below, depending on what system you're using.
 
 ### System Setup
 
@@ -47,8 +34,21 @@ However, this means you'll need to install some dependencies:
    ```
 
 3. Install [VSCode](https://code.visualstudio.com/) if you don't have it already
+4. Clone your newly created repo onto your local system.
+5. Open the folder in VSCode and select "no" to opening the devcontainer with Docker.
+6. Install the dependencies with [Poetry](https://github.com/python-poetry/poetry), or pip.
 
-#### Windows
+   ```bash
+   poetry config virtualenvs.in-project true # [Optional] Default to creating .venv in project dir
+   poetry install # Install
+   poetry env use python3.11 # [Optional] use a specific python version
+   ```
+
+   ```bash
+   pip install .
+   ```
+
+#### Windows/Linux (local only)
 
 1. Install the following:
 
@@ -57,35 +57,19 @@ However, this means you'll need to install some dependencies:
      Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
    - [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)
 
-2. Open the folder in VSCode and click "yes" to opening the devcontainer with Docker.
-
-#### Linux (local only)
-
-1. Install the following:
-
-   - [VSCode](https://code.visualstudio.com/)
-   - [Remote Development VSCode
-     Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-   - [Docker for Linux](https://docs.docker.com/desktop/install/linux-install/)
-
-2. Open the folder in VSCode and click "yes" to opening the devcontainer with Docker.
+2. Clone your newly created repo onto your local system.
+3. Open the folder in VSCode and click "yes" to opening the devcontainer with Docker.
 
 #### Remote SSH (e.g. VastAI)
 
 1. Setup any SSH keys needed to connect to your remote (host) box (e.g. [see
    this](https://vast.ai/faq#SSH) with VastAI)
-
 2. Install locally (on your laptop connecting to the box) the following:
-
    - [VSCode](https://code.visualstudio.com/)
    - [Remote Development VSCode
      Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-
 3. Connect to the host box from within VSCode using [these
    instructions](https://code.visualstudio.com/docs/remote/ssh-tutorial#_connect-using-ssh).
-
 4. Clone the repo you've already created (from the template) on this remote box.
-
 5. Open the cloned repo folder with VSCode
-
 6. Click "yes" to opening the devcontainer with Docker.
