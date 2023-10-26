@@ -10,6 +10,7 @@
         "ionutvmi.path-autocomplete",
         "matangover.mypy",
         "mikoz.autoflake-extension",
+        "ms-python.black-formatter",
         "ms-python.isort",
         "ms-python.pylint",
         "ms-python.python",
