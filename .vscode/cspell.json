@@ -6,6 +6,8 @@
         "devcontainer",
         "interpretability",
         "ndarray",
-        "transformer_lens"
+        "transformer_lens",
+        "venv",
+        "virtualenv"
     ]
 }
