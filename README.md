@@ -72,7 +72,62 @@ However, this means you'll need to install some dependencies:
    Select Interpretor`. Choose the one in the virtual environment ('.venv: Poetry'). Then reload the
    window (`CMD+SHIFT+P` then `>Developer: Reload Window`).
 
-#### Remote SSH (e.g. VastAI)
+#### Vast AI
+
+##### One Time Setup
+
+1. Go to the [console](https://cloud.vast.ai/) and click "edit image & config". Choose the latest
+   pytorch with cuda devel (e.g. `pytorch/pytorch:2.1.0-cuda12.1-cudnn8-devel`). Tick the box to run
+   "interactive shell server, SSH". Then change your startup script to this:
+
+   ```script
+   env | grep _ >> /etc/environment; echo 'starting up'
+
+   # Install GitHub CLI
+   type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+   curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+   && sudo apt update \
+   && sudo apt install gh -y
+
+   # Install Python Versions
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   sudo apt-get update && \
+      DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
+        git \
+        python3 \
+        python3.11 \
+        python3.12 \
+        python3-dev \
+        python3-distutils \
+        python3-venv
+   
+   # Install Poetry
+   curl -sSL https://install.python-poetry.org | python3 -
+   echo 'export PATH="/root/.local/bin:$PATH"' >> ~/.bashrc
+   ```
+
+2. On your local machine, install VSCode](https://code.visualstudio.com/) and the [remote development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+3. Open the command box in VSCode (`CMD+SHIFT+P` or `CRTL+SHIFT+P`) and open "Add new SSH Host".
+   Paste the SSH command in from VastAI (given after you click connect).
+
+##### Use an Instance
+
+1. Create an instance on the [instances](https://cloud.vast.ai/instances/) tab that has a `Mac CUDA` of
+   at least the current CUDA your image (above) uses.  Click connect once it's ready.
+2. Open the command box in VSCode (`CMD+SHIFT+P` or `CRTL+SHIFT+P`) and type `Remote SSH: Add New
+   SSH Host`. Paste in the proxy ssh connect details from VastAI. Then open the command box again
+   and this time connect to the host. Note if you've done this previously it's worth deleting the
+   old one first (with `Open SSH Configuration File`).
+3. Open a terminal once connected (in VSCode) and login to github with the command `gh auth login`
+4. Clone your repo with `gh repo clone [your-new-repo-name]`
+5. Open this folder with VSCode (File -> Open Folder). Click "no" if asked if you want to open the devcontainer.
+6. Click yes to "do you want to install the recommended extensions..."
+7. Open a new terminal and run `poetry install --with dev,jupyter` to install all the dependencies.
+8. Get coding.
+
+#### Remote SSH (not VastAI)
 
 1. Setup any SSH keys needed to connect to your remote (host) box (e.g. [see
    this](https://vast.ai/faq#SSH) with VastAI)

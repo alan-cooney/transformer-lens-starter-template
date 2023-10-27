@@ -3,7 +3,10 @@
     "words": [
         "circuitsvis",
         "colab",
+        "cuda",
+        "cudnn",
         "devcontainer",
+        "devel",
         "interpretability",
         "ndarray",
         "pyproject",
