@@ -106,6 +106,8 @@ However, this means you'll need to install some dependencies:
    # Install Poetry
    curl -sSL https://install.python-poetry.org | python3 -
    echo 'export PATH="/root/.local/bin:$PATH"' >> ~/.bashrc
+   export PATH="/root/.local/bin:$PATH"
+   poetry config virtualenvs.in-project true
    ```
 
 2. On your local machine, install VSCode](https://code.visualstudio.com/) and the [remote development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
@@ -124,7 +126,7 @@ However, this means you'll need to install some dependencies:
 4. Clone your repo with `gh repo clone [your-new-repo-name]`
 5. Open this folder with VSCode (File -> Open Folder). Click "no" if asked if you want to open the devcontainer.
 6. Click yes to "do you want to install the recommended extensions..."
-7. Open a new terminal and run `poetry install --with dev,jupyter` to install all the dependencies.
+7. Open a new terminal and install all the package dependencies with `poetry install --with dev,jupyter`.
 8. Get coding.
 
 #### Remote SSH (not VastAI)
