@@ -8,11 +8,11 @@
     version="0.0.0"
 
     [tool.poetry.dependencies]
-        circuitsvis=">1.43.2"
+        circuitsvis=">=1.43.2"
         einops=">=0.7"
         python=">=3.10, <3.12"
-        torch=">2.1.1"
-        transformer-lens=">1.12.0"
+        torch=">=2.1.1"
+        transformer-lens=">=1.11.0"
 
     [tool.poetry.group.dev.dependencies]
         plotly=">=5"
