@@ -42,6 +42,7 @@ RUN sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-
 # Install poetry
 RUN sudo curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="/root/.local/bin:$PATH"
+RUN sudo pip install poethepoet
 
 # Set python aliases
 RUN sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1

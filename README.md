@@ -108,6 +108,7 @@ However, this means you'll need to install some dependencies:
    echo 'export PATH="/root/.local/bin:$PATH"' >> ~/.bashrc
    export PATH="/root/.local/bin:$PATH"
    poetry config virtualenvs.in-project true
+   pip install poethepoet
    ```
 
 2. On your local machine, install VSCode](https://code.visualstudio.com/) and the [remote development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
