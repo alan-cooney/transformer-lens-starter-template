@@ -35,7 +35,7 @@ However, this means you'll need to install some dependencies:
 2. Install some dependencies:
 
    ```bash
-   brew install python@3.9 python@3.10 python@3.11 node poetry pip virtualenv
+   brew install python@3.9 python@3.10 python@3.11 python@3.12 node poetry pip virtualenv
    ```
 
 3. Install [VSCode](https://code.visualstudio.com/) if you don't have it already
@@ -57,7 +57,7 @@ However, this means you'll need to install some dependencies:
    Select Interpretor`. Choose the one in the virtual environment ('.venv: Poetry'). Then reload the
    window (`CMD+SHIFT+P` then `>Developer: Reload Window`).
 
-#### Windows/Linux (local only)
+#### Windows (locally)
 
 1. Install the following:
 
@@ -78,7 +78,8 @@ However, this means you'll need to install some dependencies:
 
 1. Go to the [console](https://cloud.vast.ai/) and click "edit image & config". Choose the latest
    pytorch with cuda devel (e.g. `pytorch/pytorch:2.1.0-cuda12.1-cudnn8-devel`). Tick the box to run
-   "interactive shell server, SSH". Then change your startup script to this:
+   "interactive shell server, SSH". Then change your startup script to this (changing the last 2
+   lines to use your own name and email):
 
    ```script
    env | grep _ >> /etc/environment; echo 'starting up'
@@ -109,6 +110,12 @@ However, this means you'll need to install some dependencies:
    export PATH="/root/.local/bin:$PATH"
    poetry config virtualenvs.in-project true
    pip install poethepoet
+
+   # Add Git name/email (doesn't need to be )
+   # The email is public so it's recommended to use your your GitHub no-reply email address
+   # https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address
+   git config --global user.name "Your name"
+   git config --global user.email "YOUR_EMAIL"
    ```
 
 2. On your local machine, install VSCode](https://code.visualstudio.com/) and the [remote development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
