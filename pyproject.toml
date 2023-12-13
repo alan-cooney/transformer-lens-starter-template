@@ -88,7 +88,7 @@
     [tool.pytest.ini_options]
         addopts=[
             "--doctest-modules",
-            "--jaxtyping-packages=sparse_autoencoder,beartype.beartype",
+            "--jaxtyping-packages=src,beartype.beartype",
             "-W ignore::beartype.roar.BeartypeDecorHintPep585DeprecationWarning",
             "-s",
         ]
@@ -141,7 +141,7 @@
             convention="google"
 
         [tool.ruff.lint.pylint]
-            max-args=15
+            max-args=10
 
 [tool.pyright]
     # All rules apart from base are shown explicitly below
